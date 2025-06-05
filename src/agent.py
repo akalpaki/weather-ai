@@ -1,7 +1,7 @@
 from collections.abc import Sequence
+from dataclasses import dataclass
 
-from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_core.prompts.chat import HumanMessagePromptTemplate
+from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
 from langchain_core.tools import BaseTool
 from langchain_ollama import ChatOllama
@@ -22,7 +22,7 @@ class WeatherReporter:
         Here is an example you can use as a reference for how you
         can format your response:
 
-        The weather in Athens today is 24 degrees Celsius (50 degrees Farenheit),
+        The weather in Athens today is X degrees Celsius (Y degrees Farenheit),
         with clear sky. A perfect day for a picnic!
 
         Do not use the example exactly, but mimic its style.
