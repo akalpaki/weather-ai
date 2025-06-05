@@ -4,6 +4,7 @@ Experimenting with creation of AI agents using python and Langchain/Langgraph.
 Goal of this agent is to accept a location as input and provide a short weather forecast.
 
 ### Setup
+This project uses Python version 3.10.17.
 
 This agent assumes you're using `Ollama` with `llama3.2:3b` model.
 More info on setting up and working with `Ollama` can be found [here](https://ollama.com/).
