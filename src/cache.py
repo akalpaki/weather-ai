@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, timezone
 import shelve
 
 DEFAULT_TTL = 3600  # one hour
-DEFAULT_PATH = "weather.cache"
+DEFAULT_PATH = "weather"
 
 
 @dataclass
