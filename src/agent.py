@@ -9,6 +9,8 @@ from langchain_community.tools.tavily_search import TavilySearchResults
 from langgraph.graph.graph import CompiledGraph
 from langgraph.prebuilt import create_react_agent
 
+from src.cache import Cache
+
 
 class WeatherReporter:
     _config: RunnableConfig = {
@@ -35,8 +37,13 @@ class WeatherReporter:
             model=self._model,
             tools=self._tools,
         )
+        self._cache: Cache = Cache()
 
     def report_weather(self, location: str) -> str:
+        cached_response = self._cache.get(location)
+        if cached_response is not None:
+            return cached_response.report
+
         raw_result = self._agent.invoke(
             input={
                 "messages": [
@@ -46,6 +53,14 @@ class WeatherReporter:
                 ],
             },
             config=self._config,
+            stream_mode="values",
+        )
+        result: str = raw_result["messages"][-1].content
+
+        self._cache.set(
+            location=location,
+            result=result,
+            ttl=None,
         )
 
-        return raw_result["messages"][-1].pretty_print()
+        return result

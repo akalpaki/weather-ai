@@ -22,7 +22,7 @@ file with the environment variable `TAVILLY_API_KEY`.
 - [python-dotenv](https://github.com/theskumar/python-dotenv)
 
 ### Roadmap:
-- Caching responses so I don't end up owing a kidney to Tavily
+- Caching responses so I don't end up owing a kidney to Tavily [X]
 - Implement more tools, eg. pick a random city for me.
 - Provide CLI to interact with agent.
 - Refactor agent to use Pydantic AI in order to compare and contrast implementations.

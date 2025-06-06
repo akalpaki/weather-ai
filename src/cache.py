@@ -31,15 +31,15 @@ class Cache:
     def __init__(self, cache_path: str | None = None):
         self._path: str = cache_path or DEFAULT_PATH
 
-    def set(self, key: str, result: str, ttl: int | None):
+    def set(self, location: str, result: str, ttl: int | None):
         with shelve.open(self._path) as cache:
             report = Report(
-                location=key,
+                location=location,
                 report=result,
                 created_at=datetime.now(timezone.utc),
                 ttl=ttl or DEFAULT_TTL,
             )
-            cache[key] = report
+            cache[location] = report
 
     def get(self, location: str) -> Report | None:
         with shelve.open(self._path) as cache:
