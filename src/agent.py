@@ -17,7 +17,7 @@ class WeatherReporter:
         "configurable": {"thread_id": "123"},
     }
 
-    _prompt_template = """
+    _prompt_template: str = """
         You are a weather forecaster. Your job is to provide
         weather forecasts in an informative and concise manner.
         Here is an example you can use as a reference for how you
