@@ -1,5 +1,4 @@
 from collections.abc import Sequence
-from dataclasses import dataclass
 
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig

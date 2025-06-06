@@ -20,3 +20,9 @@ file with the environment variable `TAVILLY_API_KEY`.
 - [langchain-community](https://github.com/langchain-ai/langchain-community)
 - [tavily-python](https://github.com/tavily-ai/tavily-python)
 - [python-dotenv](https://github.com/theskumar/python-dotenv)
+
+### Roadmap:
+- Caching responses so I don't end up owing a kidney to Tavily
+- Implement more tools, eg. pick a random city for me.
+- Provide CLI to interact with agent.
+- Refactor agent to use Pydantic AI in order to compare and contrast implementations.
