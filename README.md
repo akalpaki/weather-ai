@@ -24,6 +24,6 @@ file with the environment variable `TAVILLY_API_KEY`.
 
 ### Roadmap:
 - Caching responses so I don't end up owing a kidney to Tavily [X]
-- Implement more tools, eg. pick a random city for me.
+- Implement more tools, eg. pick a random city for me. [X]
 - Provide CLI to interact with agent. [X]
 - Refactor agent to use Pydantic AI in order to compare and contrast implementations.
